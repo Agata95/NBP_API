@@ -18,3 +18,7 @@ Stwórz main'a w którym pytasz użytkownika o 4 parametry, są nimi:
          *
          * Przetestuj działanie aplikacji - sprawdź czy zapytanie (skopiuj je do
          * przeglądarki) zwraca poprawne wyniki.
+         *
+         * Następnie ściągnij dane z przeglądarki do buffora i wyświetl je.
+         * Niech użytkowik poda w jakim formacie mają być dane: JSON, XML
+         * Parsowanie XML -> package 'model'
