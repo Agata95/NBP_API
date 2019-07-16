@@ -24,19 +24,22 @@ Stwórz main'a w którym pytasz użytkownika o 4 parametry, są nimi:
          * Niech użytkowik poda w jakim formacie mają być dane: JSON, XML
          * Parsowanie XML -> package 'model'
 
-2. Dodaj do main'a kolejne pytanie (podobnie jak robimy pytanie użytkownika o walutę, daty itp.) zadaj pytanie o to co chciałby obliczyć. W zależności od WCZEŚNIEJ WYBRANEJ TABELI użytkownik powinien mieć możliwość obliczenia:
+2. Dodaj do main'a kolejne pytanie (podobnie jak robimy pytanie użytkownika o walutę, daty itp.) zadaj pytanie o to co
+chciałby obliczyć. W zależności od WCZEŚNIEJ WYBRANEJ TABELI użytkownik powinien mieć możliwość obliczenia:
     a. kursu średniego (oblicz średnią kursu)
     b. odchyleń maksymalnych (ile wynosiła różnica między min a max)
     c. maximów i minimów (wypisz ile wynosiły)
 
-UWAGA! (jeśli tabela posiada pole MID, to obliczmay średnią MID), jeśli posiada pole ASK, to robimy to dla tego pola, jeśli posiada BID, to robimy dla pola BID.
+UWAGA! (jeśli tabela posiada pole MID, to obliczmay średnią MID), jeśli posiada pole ASK, to robimy to dla tego pola,
+jeśli posiada BID, to robimy dla pola BID.
 UWAGA! (usuńmy z opcji podawanie tabeli B - przysparza sporo problemów i ciężko jest wydobyć z niej jakiekolwiek dane)
 
 PODPOWIEDŹ: Trzeba zmodyfikować wygląd klasy z XML (Rate).
 PODPOWIEDŹ: Wystarczy dopisać brakujące pole (Mid).
 
 3. Wykrywanie braku danych.
-Spróbuj obsłużyć komunikat o braku rekordów w tabeli. Wykryj taką informację (np. url: http://api.nbp.pl/api/exchangerates/rates/C/USD/2018-01-01/2018-01-01/?format=XML )
+Spróbuj obsłużyć komunikat o braku rekordów w tabeli. Wykryj taką informację (np. url: http://api.nbp.pl/api/
+exchangerates/rates/C/USD/2018-01-01/2018-01-01/?format=XML )
 i wypisz użytkownikowi komunikat o braku danych.
 
 Propozycje:
@@ -60,14 +63,16 @@ Zakładamy że do pobrania jest data od 2018-01-01 do 2018-12-31, co daje nam ł
 Po pobraniu danych skompletuj je do jednej kolekcji (setu rates), którego kryterium porównania to identyfikator NO.
 
 Identyfikator "No" to wartość pola w klasie Rate. Jest to indywidualny klucz kursu.
-Nadpisz metodę equals i hashcode tak, aby umieścić w secie tylko unikane rekordy. Zweryfikuj, że zebrane zostało dokładnie tyle rekordów, o ile poprosił użytkownik.
+Nadpisz metodę equals i hashcode tak, aby umieścić w secie tylko unikane rekordy. Zweryfikuj, że zebrane zostało
+dokładnie tyle rekordów, o ile poprosił użytkownik.
 
 Żeby zweryfikować ilość rekordów oblicz (Period/Duration) ile jest dni różnicy między podanymi datami.
 
 
 Zadanie dodatkowe:
 
-Stwórz oddzielny package z oddzielną aplikacją, a w niej obsłuż ładowanie z NBP API wartości kursów złota z danego okresu.
+Stwórz oddzielny package z oddzielną aplikacją, a w niej obsłuż ładowanie z NBP API wartości kursów złota z danego
+okresu.
 
 URL:
 http://api.nbp.pl/api/cenyzlota/{startDate}/{endDate}
