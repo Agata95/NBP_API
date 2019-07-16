@@ -16,4 +16,7 @@ public class Rate {
 
     @XmlElement(name = "Ask")
     private Double Ask; // cena kupno
+
+    @XmlElement(name = "Mid")
+    private Double Mid;
 }
