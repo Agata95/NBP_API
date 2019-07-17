@@ -1,5 +1,6 @@
 package com.javagda25;
 
+import com.google.gson.Gson;
 import com.javagda25.model.ExchangeRatesSeries;
 import com.javagda25.model.Rate;
 
@@ -77,8 +78,27 @@ public class Main {
 
         System.out.println("Your request url is: " + requestURL);
 
+        if (dataFormat == DataFormat.XML) {
+            przetwarzanieXML(scanner, requestURL);
+        } else {
+            przetwarzanieJSON(scanner, requestURL);
+        }
+
+    }
+
+    private static void przetwarzanieJSON(Scanner scanner, String requestURL) {
         String content = loadContentFromURL(requestURL);
-        if(content == null){
+
+        Gson gson = new Gson();
+
+        ExchangeRatesSeries exchangeRatesSeries = gson.fromJson(content, ExchangeRatesSeries.class);
+
+        System.out.println(exchangeRatesSeries);
+    }
+
+    private static void przetwarzanieXML(Scanner scanner, String requestURL) {
+        String content = loadContentFromURL(requestURL);
+        if (content == null) {
             System.err.println("Brak danych");
             System.exit(1);
         }
